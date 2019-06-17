@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       memos: [
         {
-          title: 'how to use',
+          title: 'how to use!',
           contents: ['create new memo', 'edit title', 'add new contents', 'did contents style line-through', 'can be deleted']
         }
       ]
