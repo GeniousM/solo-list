@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import List from './list';
+import Title from './title';
+import Contents from './Contents';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      memos: [
+        {
+          title: 'how to use',
+          contents: ['create new memo', 'edit title', 'add new contents', 'did contents style line-through', 'can be deleted']
+        }
+      ]
+    }
+  }
+
+  render() {
+    return (
+      <div class="grid-container">
+        <div class="item1">Solo-List</div>
+        <div class="item2">Memo List<List title = {this.state.memos[0].title}/></div>
+        <div class="item3"><Title /></div>
+        <div class="item5"><Contents /></div>
+      </div>
+    )
+  }
 }
 
 export default App;
